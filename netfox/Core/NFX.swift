@@ -49,6 +49,8 @@ open class NFX: NSObject
         case custom
     }
     
+    open var clientSession: URLSession?
+    
     fileprivate var started: Bool = false
     fileprivate var presented: Bool = false
     fileprivate var enabled: Bool = false

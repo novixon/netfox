@@ -65,7 +65,7 @@ open class NFXProtocol: URLProtocol
         URLProtocol.setProperty("1", forKey: "NFXInternal", in: req)
         
         if (session == nil) {
-            session = URLSession(configuration: URLSessionConfiguration.default)
+            session = NFX.sharedInstance().clientSession ?? URLSession(configuration: URLSessionConfiguration.default)
         }
         
         session!.dataTask(with: req as URLRequest, completionHandler: {data, response, error in
